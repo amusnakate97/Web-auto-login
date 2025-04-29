@@ -38,18 +38,14 @@ try:
     sign_in_button = driver.find_element(By.ID, "signInSubmit")
     sign_in_button.click()
 
-    # # Wait for a few seconds to ensure login is successful
-    time.sleep(100)
-
-    # # Check if login was successful by looking for a specific element (e.g., account name)
-    # try:
-    #     account_element = WebDriverWait(driver, 10).until(
-    #         EC.presence_of_element_located((By.ID, "nav-link-accountList"))
-    #     )
-    #     print("Login successful!")
-    # except:
-    #     print("Login failed. Please check your credentials or the page structure.")
-    print("Entered Email")
+    # Check if login was successful by looking for a specific element (e.g., account name)
+    try:
+        account_element = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "nav-link-accountList"))
+        )
+        print("Login successful!")
+    except:
+        print("Login failed. Please check your credentials or the page structure.")
 
 finally:
     # Close the browser
